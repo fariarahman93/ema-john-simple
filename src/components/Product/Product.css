@@ -43,3 +43,6 @@
 .btn-cart:hover{
     background-color: orange;
 }
+.basket{
+    margin-left: 5px;
+}
