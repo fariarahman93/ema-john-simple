@@ -12,9 +12,10 @@ const Shop = () => {
     }, [])
     const [cart, setCart] = useState([]);
 
+    //first time load 
     //useEffect will be called asynchronously and first time with empty array product
     //after loading product it will called again due to changed value of product
-    useEffect(() => {
+    useEffect(() => { 
         const storedCart = getShoppingCart();
         const savedCart = [];
         console.log(storedCart);

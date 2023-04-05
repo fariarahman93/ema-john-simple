@@ -1,15 +1,16 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../images/Logo.svg'
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <nav className='header'>
             <img src={logo} alt="" />
             <div>
-                <a href="/shop">Shop</a>
-                <a href="/order">Order</a>
-                <a href="/Inventory">inventory</a>
-                <a href="/Login">login</a>
+                <Link to="/">Shop</Link>
+                <Link to="/orders">Orders</Link>
+                <Link to="/Inventory">inventory</Link>
+                <Link to="/Login">login</Link>
             </div>
         </nav>
     );
