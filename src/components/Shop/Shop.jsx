@@ -3,6 +3,8 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 import { addToDb, getShoppingCart } from './../../utilities/fakedb';
+import { handleClearCartUtils } from '../../utilities/utilities';
+import { Link } from 'react-router-dom';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -55,6 +57,9 @@ const Shop = () => {
         //console.log('added to cart:', cart);
         addToDb(product.id);
     }
+    const handleClearCart=()=>{
+        handleClearCartUtils(setCart);
+    }
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -65,7 +70,9 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}>
+                    <Link className='link-proceed' to='orders'> <button className='btn-proceed'>Review Orders</button> </Link>
+                </Cart>
             </div>
         </div>
     );
