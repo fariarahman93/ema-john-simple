@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import Product from '../Product/Product';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItems from '../ReviewItems/ReviewItems';
 //import './Shop.css';
